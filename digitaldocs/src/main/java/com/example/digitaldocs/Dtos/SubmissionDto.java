@@ -3,6 +3,6 @@ package com.example.digitaldocs.Dtos;
 import lombok.Data;
 
 @Data
-public class  Submission {
+public class  SubmissionDto {
     private String status;
 }

@@ -6,7 +6,6 @@ import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import lombok.Data;
 
@@ -20,7 +19,6 @@ public class Documents {
     @Column(name ="uploadedDate")
     private LocalDate uploadedDate;
 
-    @ManyToOne(cascade=CascadeType.ALL)
-    @JoinColumn(name="userId")
-    private String userId;
+    @ManyToOne(cascade= CascadeType.ALL)
+    private User uploadedBy;
 }

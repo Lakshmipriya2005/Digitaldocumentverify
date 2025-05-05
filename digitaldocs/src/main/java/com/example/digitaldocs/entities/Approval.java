@@ -5,6 +5,8 @@ import java.time.LocalDateTime;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import lombok.Data;
 
 @Entity
@@ -20,5 +22,9 @@ public class Approval {
     @Column(name= "approvalDate")
     private LocalDateTime aprovalDate;
 
-    
+    @ManyToOne
+    private User approvedBy;
+
+    @OneToOne
+    private Submission submission;
 }

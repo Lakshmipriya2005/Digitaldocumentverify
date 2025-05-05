@@ -24,11 +24,12 @@ public class  Submission {
     @Column(name="subDate")
     private LocalDateTime submissionDate;
 
-    @ManyToOne(cascade= CascadeType.ALL)
-    @JoinColumn(name="userId")
-    private String userId;
+    @ManyToOne
+    private Documents document;
 
-    @OneToOne(cascade= CascadeType.ALL)
-    @JoinColumn(name= "approvalId")
-    private String approvalId;
+    @ManyToOne
+    private User submittedBy;
+
+    @OneToOne(mappedBy = "submission", cascade = CascadeType.ALL)
+    private Approval approval;
 }

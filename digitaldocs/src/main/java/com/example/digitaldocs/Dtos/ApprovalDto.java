@@ -3,6 +3,6 @@ package com.example.digitaldocs.Dtos;
 import lombok.Data;
 
 @Data
-public class User {
-    private String password;
+public class ApprovalDto {
+    private String status;
 }
